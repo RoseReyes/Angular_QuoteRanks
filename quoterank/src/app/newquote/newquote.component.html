@@ -16,7 +16,7 @@
                             minlength="3"
                             [(ngModel)] = "newQuote.quote"
                             #quote="ngModel"/></p>
-            <div class="text-danger" *ngIf = "!quote.untouched"><p>Quote is required</p></div>
+            <div class="text-danger" [hidden] = "quote.valid"><p>Quote is required</p></div>
             <div class="text-danger" *ngIf = "quoteError"><p>{{quoteError.quote.message}}</p></div>
             <div class="row justify-content-md-center ml-4">
               <div *ngIf = "oneQuote" class="col-md-6">
