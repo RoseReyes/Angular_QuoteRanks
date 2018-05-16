@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <h1 class="mt-4">{{ Header }}</h1>
+    </div>
+    <div class="row justify-content-md-center">
+        <a [routerLink]= "['/new']">Add a quotable author</a>
+    </div>
+    <div class="row justify-content-md-center">
+        <p>We have quotes by:</p>
+    </div>
+    <div *ngIf = "allAuthors">
+    <div class="row justify-content-md-center">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>Authors</th>
+                <th class="text-center">Action Available</th>
+            </tr>
+            <tr *ngFor = "let author of allAuthors" >
+                <td>{{author.name}}</td>
+                <td>
+                    <button class="btn btn-success ml-3 text-center" [routerLink] = "['/quotes' ,author._id]">View quotes</button>
+                    <button class="btn btn-info ml-3" [routerLink] = "['/edit', author._id]">Edit</button>            
+                </td>
+            </tr>
+        </table>  
+    </div>
+</div>
+</div>

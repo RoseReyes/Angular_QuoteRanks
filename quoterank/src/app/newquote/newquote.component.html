@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <h1 class="mt-4"> {{ Header }}</h1>
+    </div>
+    <div class="row justify-content-md-center">
+        <a [routerLink]= "['/']">Home</a>
+    </div>
+    <div *ngIf = "oneQuote" class="row justify-content-md-center">
+        <p>Provide a quote by: <strong>{{ oneQuote.name }}</strong></p>
+    </div>
+    <div class="row justify-content-md-center" >
+        <form (submit) ="onCreateQuoteClick(oneQuote._id)">
+            <p>Quote: <input type="text" 
+                            name = "newQuote.quote" 
+                            required
+                            minlength="3"
+                            [(ngModel)] = "newQuote.quote"
+                            #quote="ngModel"/></p>
+            <div class="text-danger" *ngIf = "!quote.untouched"><p>Quote is required</p></div>
+            <div class="text-danger" *ngIf = "quoteError"><p>{{quoteError.quote.message}}</p></div>
+            <div class="row justify-content-md-center ml-4">
+              <div *ngIf = "oneQuote" class="col-md-6">
+                  <button class="btn btn-success" [routerLink]="['/quotes',oneQuote._id]">CANCEL</button>
+              </div> 
+              <div class="col-md-6">
+                  <button class="btn btn-success" [disabled]="!quote.valid" type="submit">SUBMIT</button>
+              </div>
+            </div>
+        </form>
+    </div>
+</div>
