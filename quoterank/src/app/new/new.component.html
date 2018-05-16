@@ -17,7 +17,7 @@
                           [(ngModel)] = "newAuthors.name"
                           #name="ngModel" 
                     /></p>
-          <div class="text-danger" *ngIf = "!name.untouched"><p>Name is required</p></div>
+          <div class="text-danger" [hidden] = "name.valid"><p>Name is required</p></div>
           <div class="text-danger" *ngIf = "error"><p>{{error.name.message}}</p></div>
           <div class="row justify-content-md-center ml-4">
             <div class="col-md-6">

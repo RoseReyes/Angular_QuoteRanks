@@ -26,7 +26,7 @@
             <tbody>
                 <tr *ngFor = "let quote of OneAuthor.auth_quotes" >
                   <td> {{quote.quote}} </td>
-                  <td> {{quote.votes}}</td>
+                  <td> {{quote.votes}} </td>
                   <td>
                       <button class="btn btn-success" (click) = "voteUp(quote._id)">Vote up</button>
                       <button class="btn btn-info ml-3" (click) = "voteDown(quote._id)">Vote down</button>
