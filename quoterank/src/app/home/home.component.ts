@@ -28,21 +28,4 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  // getQuotes(id){
-  //   let getQuotesObservable = this._httpService.getQuote(id)
-  //   getQuotesObservable.subscribe(data =>{
-  //     console.log("One quote",data);
-  //     this.oneQuote = data;
-  //   })
-
-  // }
-  
-  // destroyAuthor(id){
-  //   let delAuthorsObservable = this._httpService.deleteAuthor(id)
-  //   delAuthorsObservable.subscribe(data => {
-  //     console.log("Deleted one author", data);
-  //   })
-  //   this.getAuthors() // Call the updated set of data after deletion without refreshing the page
-  // }
-
 }

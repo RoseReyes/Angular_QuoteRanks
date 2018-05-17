@@ -10,5 +10,5 @@ module.exports = (() => {
     auth_quotes: [QuoteSchema]
 }, {timestamps:true});
 Authors = mongoose.model('Authors', AuthorSchema);
-AuthorSchema.plugin(uniqueValidator);
+AuthorSchema.plugin(uniqueValidator, { message: '{VALUE} already exists.' });
 })();

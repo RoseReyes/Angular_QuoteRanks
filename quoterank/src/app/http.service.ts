@@ -35,7 +35,7 @@ export class HttpService {
     return this._http.delete('/newquote/'+ id + "/" + delquote);
   }
   
-  voteQuote(id: String,  quote){
+  voteQuote(id: String, quote){
     console.log("I am in service");
     return this._http.post('/updatevote/'+ id, quote);
   }

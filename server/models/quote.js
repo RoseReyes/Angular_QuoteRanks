@@ -1,6 +1,5 @@
 require('../config/mongoose');
 const mongoose = require('mongoose');
-var uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
 
 module.exports = (() => {
@@ -9,5 +8,4 @@ module.exports = (() => {
      votes: {type: Number, default: 0}
 }, {timestamps:true});
 Quotes = mongoose.model('Quotes', QuoteSchema);
-QuoteSchema.plugin(uniqueValidator, {message: "The {PATH} {VALUE} already exists" });
 })();
